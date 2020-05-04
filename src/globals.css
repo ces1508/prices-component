@@ -1,0 +1,32 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-size: 15px;
+  font-family: 'Montserrat', sans-serif;
+  min-height: 100vh;
+  /* background: url('/images/bg-top.svg'),  var(--veryLightGrayBlue); */
+  /* background-position: right top;
+  background-repeat: no-repeat;
+  background-size: 155px; */
+  background-color: var(--veryLightGrayBlue);
+}
+
+:root {
+  --mainColorFirst: hsl(236, 72%, 79%);
+  --mainColorSecond: hsl(237, 63%, 64%);
+  --veryLightGrayBlue: hsl(240, 78%, 98%);
+  --lightGrayishBlue: hsl(234, 14%, 74%);
+  --grayishBlue: hsl(233, 13%, 49%);
+  --darkGrayishBlue: hsl(232, 13%, 33%);
+  --switchIndicatorSize: 28px;
+  --colorWhite: #fff;
+  --textBlack: #494c5f;
+}
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--veryLightGrayBlue);
+}

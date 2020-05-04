@@ -1,24 +1,36 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import Header from './components/header'
+import Switch from './components/switch'
+import PlandCard from './components/PlanCard'
+import data from './data'
+import './globals.css'
+import './index.css'
+
 
 function App() {
+  const [subscriptionType, setSubscriptionType] = useState('anually')
+  function handleChange(value) {
+    if (value) return setSubscriptionType('monthly')
+    setSubscriptionType('anually')
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='app'>
+      <div className="main-wrapper">
+        <Header>
+          <Switch handleChange={handleChange}/>
+        </Header>
+        <section className="plans-wrapper">
+          {data.plans.map(plan => (
+            <PlandCard
+              type={subscriptionType}
+              key={plan.id}
+              {...plan}
+              cardType={plan.isSuggested ? 'suggested' : 'normal'}
+            />
+          ))}
+        </section>
+      </div>
+
     </div>
   );
 }

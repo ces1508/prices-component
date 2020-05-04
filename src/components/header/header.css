@@ -1,0 +1,10 @@
+.header {
+  padding: 2em;
+}
+.header__title {
+  margin: 0;
+  font-size: 1.7em;
+  color: var(--grayishBlue);
+  text-align: center;
+  text-transform: capitalize;
+}
